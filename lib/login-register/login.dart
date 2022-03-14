@@ -1,3 +1,4 @@
+import 'package:assignment/login-register/register.dart';
 import 'package:assignment/screens/home.dart';
 import 'package:flutter/material.dart';
 
@@ -75,7 +76,10 @@ class RegisterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => RegisterPage()));
+      },
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: const [

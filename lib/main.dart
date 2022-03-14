@@ -1,7 +1,5 @@
 import 'package:assignment/login-register/login.dart';
 import 'package:assignment/login-register/register.dart';
-import 'package:assignment/screens/articleDetails.dart';
-import 'package:assignment/screens/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
