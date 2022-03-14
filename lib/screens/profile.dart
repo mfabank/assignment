@@ -40,7 +40,7 @@ class _ProfileState extends State<Profile> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: InkWell(
-             // onTap: () => pickImage(ImageSource.gallery),
+              // onTap: () => pickImage(ImageSource.gallery),
               child: Text(
                 "Gallery",
                 style: TextStyle(color: Colors.blue),
@@ -77,21 +77,28 @@ class _ProfileState extends State<Profile> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Center(
-            child: Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  InkWell(
-                    child: Icon(Icons.camera_alt),
-                    onTap: () =>pickImage(ImageSource.camera)
+            child: InkWell(
+              onTap: () => pickImage(ImageSource.camera),
+              child: Container(
+                child: InkWell(
+                  child: ClipOval(
+                    child: image != null
+                        ? Image.file(
+                            image!,
+                            width: MediaQuery.of(context).size.width * 0.3,
+                            height: MediaQuery.of(context).size.height * 0.2,
+                            fit: BoxFit.cover,
+                          )
+                        : Image.network(
+                            "https://www.pinclipart.com/picdir/middle/61-611898_camera-png-icon-camera-line-icon-png-clipart.png",
+                            scale: 7,
+                          ),
                   ),
-                ],
+                ),
+
+                //width: MediaQuery.of(context).size.width * 0.3,
+                //height: MediaQuery.of(context).size.height * 0.2,
               ),
-              decoration:
-                  BoxDecoration(shape: BoxShape.circle, color: Colors.black),
-              width: MediaQuery.of(context).size.width * 0.3,
-              height: MediaQuery.of(context).size.height * 0.2,
             ),
           ),
           SizedBox(
